@@ -1,5 +1,5 @@
 {
   "alert_id": "101",
-  "message": "CRITICAL: System Overheat!",
+  "message": "AMBER ALERT: State Police: Child abduction in Austin, TX.Victim: Leo Doe, age 4, male, blonde hair, blue shirt.Suspect: John Doe, age 30, brown hair.Vehicle: Silver 2018 Toyota Camry, Texas license plate ABC-1234.Action: If seen, call 911 immediately. Do not confront.",
   "link": "https://github.com/stahuja/pcalert/alert.html"
 }
