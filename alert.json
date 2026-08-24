@@ -1,0 +1,5 @@
+{
+  "alert_id": "101",
+  "message": "CRITICAL: System Overheat!",
+  "link": "https://github.com/stahuja/pcalert/alert.html"
+}
