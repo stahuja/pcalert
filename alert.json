@@ -1,5 +1,13 @@
-{
-  "alert_id": "101",
-  "message": "AMBER ALERT: State Police: Child abduction in Austin, TX.Victim: Leo Doe, age 4, male, blonde hair, blue shirt.Suspect: John Doe, age 30, brown hair.Vehicle: Silver 2018 Toyota Camry, Texas license plate ABC-1234.Action: If seen, call 911 immediately. Do not confront.",
-  "link": "https://github.com/stahuja/pcalert/alert.html"
-}
+[
+  {
+    "alert_id": "102",
+    "person_name": "Jane Doe",
+    "description": "5'4\", wearing a blue jacket and jeans. Last seen near Central Park.",
+    "last_seen": "October 24th, 2:00 PM",
+    "photo_url": "https://yourusername.github.io/images/jane_doe.jpg",
+    "car_model": "Tesla Model 3",
+    "car_color": "Crimson Red",
+    "car_plate": "XYZ-1234",
+    "contact_email": "tips@emergency.com"
+  }
+]
