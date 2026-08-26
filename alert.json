@@ -2,7 +2,7 @@
 {
   "alert_id": "102",
   "person_name": "Jane Doe",
-  "message": "5'4\", wearing a blue jacket and jeans. Last seen near Central Park.",
+  "description": "5'4\", wearing a blue jacket and jeans. Last seen near Central Park.",
   "last_seen": "October 24th, 2:00 PM",
   "photo_url": "https://yourusername.github.io/images/jane_doe.jpg",
   "car_model": "Tesla Model 3",
