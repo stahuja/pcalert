@@ -8,6 +8,6 @@
   "car_model": "Tesla Model 3",
   "car_color": "Crimson Red",
   "car_plate": "XYZ-1234",
-  "contact_email": "tips@emergency.com"
-  "message: "Mising Person Alert: John Doe, wearing a blue jacket and jeans. Last seen near Central Park in Tesla Model 3 Crimson Red LIC Plate- XYZ-1234."
+  "contact_email": "tips@emergency.com",
+  "message": "Mising Person Alert: John Doe, wearing a blue jacket and jeans. Last seen near Central Park in Tesla Model 3 Crimson Red LIC Plate- XYZ-1234."
 }
