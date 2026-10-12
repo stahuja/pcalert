@@ -89,6 +89,7 @@
                 <p>Vehicle: <span id="carModel" class="highlight">-</span></p>
                 <p>Color: <span id="carColor" class="highlight">-</span></p>
                 <p>Plate: <span id="carPlate" class="highlight">-</span></p>
+                <p>Misc: <span id="carMisc" class="highlight">-</span></p>
             </div>
         </div>
     </div>
@@ -151,6 +152,7 @@
             document.getElementById('carModel').innerText = alert.car_model;
             document.getElementById('carColor').innerText = alert.car_color;
             document.getElementById('carPlate').innerText = alert.car_plate;
+            document.getElementById('carMisc').innerText = "Dent on left door";
 
             const aiPrompt = `A professional high-resolution automotive studio photo of a ${alert.car_color} ${alert.car_model}, side view, realistic lighting, 8k resolution, white background`;
             const imgSize = squareView ? 'width=600&height=600' : 'width=600&height=400';
