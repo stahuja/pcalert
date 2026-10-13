@@ -5,16 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>URGENT: Missing Person Alert</title>
     <style>
-        body { font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background: #f4f4f4; margin: 0; padding: 20px; color: #333; }
-        .container { max-width: 600px; margin: 0 auto; background: white; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); overflow: hidden; border-top: 10px solid #d32f2f; }
-        .header { background: #d32f2f; color: white; text-align: center; padding: 20px; font-size: 24px; font-weight: bold; text-transform: uppercase; }
-        .section { padding: 20px; border-bottom: 1px solid #eee; }
-        .section-title { font-size: 18px; color: #d32f2f; font-weight: bold; margin-bottom: 15px; display: flex; align-items: center; }
-        .profile-img, .car-img { width: 100%; max-width: 300px; height: auto; border-radius: 10px; display: block; margin: 0 auto 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-        .details { font-size: 16px; line-height: 1.6; }
+        * { box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background: #f4f4f4; margin: 0; padding: 10px 20px; color: #333; min-height: 100vh; min-height: 100dvh; display: flex; flex-direction: column; }
+        .container { flex: 1; min-height: 0; max-width: 600px; width: 100%; margin: 0 auto; background: white; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); overflow: hidden; border-top: 10px solid #d32f2f; display: flex; flex-direction: column; }
+        .header { background: #d32f2f; color: white; text-align: center; padding: 10px; font-size: 20px; font-weight: bold; text-transform: uppercase; flex-shrink: 0; }
+        .split-row { flex: 1; min-height: 0; display: flex; flex-direction: column; }
+        .section { flex: 1; min-height: 0; padding: 10px 14px; border-bottom: 1px solid #eee; display: flex; flex-direction: column; }
+        .section:last-of-type { border-bottom: none; }
+        .section-title { font-size: 15px; color: #d32f2f; font-weight: bold; margin-bottom: 8px; display: flex; align-items: center; flex-shrink: 0; }
+        .profile-img, .car-img { flex: 1; min-height: 0; width: 100%; max-width: 300px; object-fit: cover; border-radius: 10px; display: block; margin: 0 auto 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        .details { font-size: 14px; line-height: 1.4; flex-shrink: 0; }
+        .details p { margin: 2px 0; }
         .highlight { font-weight: bold; color: #000; }
-        .btn-group { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 20px; background: #fdfdfd; }
-        .btn { text-align: center; padding: 15px; border-radius: 8px; text-decoration: none; font-weight: bold; color: white; transition: 0.3s; cursor: pointer; border: none; width: 100%; font-size: 16px; }
+        .btn-group { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 10px 14px; background: #fdfdfd; flex-shrink: 0; }
+        .btn { text-align: center; padding: 10px; border-radius: 8px; text-decoration: none; font-weight: bold; color: white; transition: 0.3s; cursor: pointer; border: none; width: 100%; font-size: 14px; }
         .btn-person { background: #d32f2f; }
         .btn-car { background: #555; }
         .btn:hover { opacity: 0.8; transform: translateY(-2px); }
@@ -25,6 +29,7 @@
             max-width: 100vw;
             width: 100vw;
             height: 100vh;
+            height: 100dvh;
             margin: 0;
             border-radius: 0;
             display: flex;
@@ -89,7 +94,6 @@
                 <p>Vehicle: <span id="carModel" class="highlight">-</span></p>
                 <p>Color: <span id="carColor" class="highlight">-</span></p>
                 <p>Plate: <span id="carPlate" class="highlight">-</span></p>
-                <p>Misc: <span id="carMisc" class="highlight">-</span></p>
             </div>
         </div>
     </div>
@@ -152,7 +156,6 @@
             document.getElementById('carModel').innerText = alert.car_model;
             document.getElementById('carColor').innerText = alert.car_color;
             document.getElementById('carPlate').innerText = alert.car_plate;
-            document.getElementById('carMisc').innerText = "Dent on left door";
 
             const aiPrompt = `A professional high-resolution automotive studio photo of a ${alert.car_color} ${alert.car_model}, side view, realistic lighting, 8k resolution, white background`;
             const imgSize = squareView ? 'width=600&height=600' : 'width=600&height=400';
