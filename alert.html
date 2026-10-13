@@ -12,9 +12,26 @@
         .split-row { flex: 1; min-height: 0; display: flex; flex-direction: column; }
         .section { flex: 1; min-height: 0; padding: 10px 14px; border-bottom: 1px solid #eee; display: flex; flex-direction: column; }
         .section:last-of-type { border-bottom: none; }
-        .section-title { font-size: 15px; color: #d32f2f; font-weight: bold; margin-bottom: 8px; display: flex; align-items: center; flex-shrink: 0; }
-        .profile-img, .car-img { flex: 1; min-height: 0; width: 100%; max-width: 300px; object-fit: cover; border-radius: 10px; display: block; margin: 0 auto 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-        .details { font-size: 14px; line-height: 1.4; flex-shrink: 0; }
+        .section-title { font-size: 15px; color: #d32f2f; font-weight: bold; margin-bottom: 6px; display: flex; align-items: center; flex-shrink: 0; }
+        /*
+         * Fixed height band tied to viewport height, so images never stretch or
+         * arbitrarily crop. 'contain' keeps the full subject visible; the light
+         * background makes the letterboxing look intentional on any aspect ratio.
+         */
+        .profile-img, .car-img {
+            height: clamp(110px, 24vh, 240px);
+            width: 100%;
+            max-width: 340px;
+            object-fit: contain;
+            background: #fafafa;
+            border: 1px solid #eee;
+            border-radius: 10px;
+            display: block;
+            margin: 0 auto 6px;
+            flex-shrink: 0;
+        }
+        /* Long descriptions scroll inside their own box instead of pushing the page taller */
+        .details { font-size: 14px; line-height: 1.4; flex: 1 1 auto; min-height: 0; overflow: hidden auto; }
         .details p { margin: 2px 0; }
         .highlight { font-weight: bold; color: #000; }
         .btn-group { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 10px 14px; background: #fdfdfd; flex-shrink: 0; }
@@ -22,6 +39,15 @@
         .btn-person { background: #d32f2f; }
         .btn-car { background: #555; }
         .btn:hover { opacity: 0.8; transform: translateY(-2px); }
+
+        /* Extra-compact sizing for very short screens (e.g. landscape phones) */
+        @media (max-height: 620px) {
+            .header { padding: 6px; font-size: 16px; }
+            .profile-img, .car-img { height: clamp(80px, 19vh, 200px); max-width: 280px; }
+            .details { font-size: 13px; }
+            .btn { padding: 8px; font-size: 13px; }
+            .section { padding: 8px 12px; }
+        }
 
         /* ---------- Square views: ?view=driver or ?view=mini ---------- */
         body.driver { padding: 0; }
@@ -35,7 +61,6 @@
             display: flex;
             flex-direction: column;
         }
-        /* vmin keeps text proportional to the square's size instead of fixed pixels */
         body.driver .header { padding: 1.2vmin; font-size: clamp(13px, 3.2vmin, 30px); }
         body.driver .split-row {
             flex: 1;
@@ -49,12 +74,16 @@
         body.driver .profile-img, body.driver .car-img {
             flex: 1;
             min-height: 0;
+            height: auto;
             width: 100%;
             max-width: none;
             aspect-ratio: 1 / 1;
             object-fit: cover;
+            background: none;
+            border: none;
             margin: 0 0 1vmin;
             border-radius: 8px;
+            flex-shrink: 1;
         }
         body.driver .details { font-size: clamp(12px, 3vmin, 26px); line-height: 1.35; overflow: hidden auto; }
         body.driver .details p { margin: 0.5vmin 0; }
